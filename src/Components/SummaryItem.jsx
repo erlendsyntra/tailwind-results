@@ -1,14 +1,31 @@
-import { useState, useEffect } from "react";
 import IconReaction from "./IconReaction";
+import IconMemory from "./IconMemory";
+import IconVerbal from "./IconVerbal";
+import IconVisual from "./IconVisual";
 
-const SummaryItem = ({ liColor, text, textColor, score }) => {
+const SummaryItem = ({ id, liColor, text, textColor, score }) => {
+  const renderSwitch = (id) => {
+    switch (id) {
+      case 1:
+        return <IconReaction />;
+        break;
+      case 2:
+        return <IconMemory />;
+        break;
+      case 3:
+        return <IconVerbal />;
+        break;
+      default:
+        return <IconVisual />;
+    }
+  };
   return (
     <li
       className={
-        liColor ? `${liColor} rounded-xl flex md:p-3` : `rounded-xl flex md:p-3`
+        liColor ? `${liColor} rounded-xl flex p-3` : `rounded-xl flex p-3`
       }
     >
-      <IconReaction />
+      {renderSwitch(id)}
       <p
         className={textColor ? `${textColor} ml-3 font-bold` : `ml-3 font-bold`}
       >

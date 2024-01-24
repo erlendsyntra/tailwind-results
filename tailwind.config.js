@@ -34,7 +34,12 @@ export default {
       fontFamily: {
         "Hanken-Grotesk": ["Hanken Grotesk", "sans-serif"],
       },
+      fontSize: {
+        "3.5xl": ["2rem", { lineHeight: "2.35rem" }],
+      },
       spacing: {
+        88: "22rem",
+        112: "28.3rem",
         128: "32rem",
         185: "46.25rem",
       },

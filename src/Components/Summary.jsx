@@ -15,24 +15,24 @@ const Summary = () => {
   const getResults = async () => {
     // const { data } = await supabase.from("results").select();
     const { data } = await db.from("results").select();
-    // .order("created_at", { ascending: false });
-    console.log(data);
     setResults(data);
   };
 
   useEffect(() => {
     getResults();
   }, []);
-
   return (
     <>
-      <div className="bg-pro-white rounded-rb-3xl md:w-1/2 h-128 shadow-2xl rounded-3xl px-10">
-        <h1 className="font-medium text-2xl pt-9">Summary</h1>
-        <ul className="md:text-xl space-y-5 pt-8 font-extrabold">
+      <div className="bg-pro-white rounded-rb-3xl md:w-1/2 md:h-128 h-112 shadow-2xl rounded-3xl md:px-10 px-5">
+        <h1 className="font-medium md:text-2xl text-lg md:pt-9 pt-6">
+          Summary
+        </h1>
+        <ul className="md:text-xl space-y-5 md:pt-8 pt-7 font-extrabold">
           {results.map(({ id, text, liColor, textColor, score }) => {
             return (
               <SummaryItem
                 key={id}
+                id={id}
                 text={text}
                 liColor={liColor}
                 textColor={textColor}
@@ -43,9 +43,7 @@ const Summary = () => {
         </ul>
         <a
           href="#"
-          className="bg-pro-dark-grayblue text-pro-white text-center md:mt-10 text-xl 
-          font-extrabold w-full py-4 inline-block rounded-full hover:text-pro-pale-blue/60 
-          hover:hover:bg-gradient-to-b from-pro-light-slate-blue to-pro-light-royal-blue transition-all"
+          className="bg-pro-dark-grayblue text-pro-white text-center md:mt-10 mt-6 text-xl font-extrabold w-full py-4 inline-block rounded-full"
         >
           Continue
         </a>
