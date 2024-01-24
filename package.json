@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview --open --host",
     "predeploy": "npm run build",
-    "deploy": "surge ./dist ORIGINAL_NAME.surge.sh"
+    "deploy": "surge ./dist tailwind-results-erlend.surge.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.3",
